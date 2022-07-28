@@ -1,5 +1,5 @@
 import { Router } from 'express'
-
+import { v4 as uuidV4 } from 'uuid'
 const categoriesRouter = Router()
 
 const categories = []
@@ -7,10 +7,13 @@ const categories = []
 categoriesRouter.post('/categories', (request, response) => {
     const { name, description } = request.body
 
-    categories.push({
+    const category = {
         name,
-        description
-    })
+        description,
+        id: uuidV4
+    }
+
+    categories.push(category)
 
     response.status(201).send()
 })
