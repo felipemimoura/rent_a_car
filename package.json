@@ -1,0 +1,14 @@
+{
+  "name": "rent_a_car",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:felipemimoura/rent_a_car.git",
+  "author": "Felipe Moura <felipemimoura@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}
