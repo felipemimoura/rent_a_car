@@ -10,7 +10,13 @@ categoriesRouter.post('/', (request, response) => {
 
     categoriesRepository.create({ name, description })
 
-    response.status(201).send()
+    return response.status(201).send()
+})
+
+categoriesRouter.get('/', (request, response) => {
+    const listAllCategories = categoriesRepository.list()
+
+    return response.json(listAllCategories)
 })
 
 
