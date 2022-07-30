@@ -1,5 +1,4 @@
 import { Router } from 'express'
-import { Category } from '../model/Category'
 import { CategoriesRepositories } from '../repositories/CategoriesRepositories'
 
 const categoriesRouter = Router()
