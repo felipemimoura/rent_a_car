@@ -13,20 +13,26 @@ class CategoriesRepositories {
     }
 
     create({ name, description }: ICreateCategoryDTO): void {
-        const categoy = new Category()
+        const category = new Category()
 
-        Object.assign(categoy, {
+        Object.assign(category, {
             name,
             description,
             created_at: new Date()
         })
 
-        this.categories.push(categoy)
+        this.categories.push(category)
     }
 
 
     list(): Category[] {
         return this.categories
+    }
+
+    findByName(name: string): Category {
+        const category = this.categories.find(category => category.name === name)
+
+        return category
     }
 }
 
