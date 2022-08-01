@@ -1,4 +1,4 @@
-import { CategoriesRepositories } from "../repositories/CategoriesRepositories"
+import { ICategoriesRespository } from "../repositories/ICategoriesRepository";
 
 interface IRequest {
     name: string;
@@ -6,7 +6,7 @@ interface IRequest {
 }
 
 class CreateCategoryServices {
-    constructor(private categoriesRepository: CategoriesRepositories) { }
+    constructor(private categoriesRepository: ICategoriesRespository) { }
     execute({ name, description }: IRequest): void {
         const categoryAlreadyExist = this.categoriesRepository.findByName(name)
 
@@ -18,4 +18,4 @@ class CreateCategoryServices {
     }
 }
 
-export { CreateCategoryServices }
+export { CreateCategoryServices };
