@@ -1,11 +1,9 @@
 import express from 'express'
-import { categoriesRouter } from './routes/categories.routes'
-import { specificationRouter } from './routes/specification.routes'
+import { router } from './routes'
 const app = express()
 
 app.use(express.json())
 
-app.use("/categories", categoriesRouter)
-app.use("/specification", specificationRouter)
+app.use(router)
 
 app.listen(3333, () => console.log('server is running'))
