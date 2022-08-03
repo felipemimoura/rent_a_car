@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import { CategoriesRepositories } from '../modules/cars/repositories/CategoriesRepositories'
+import { CategoriesRepositories } from '../modules/cars/repositories/CategoriesRepository'
 import { CreateCategoryServices } from '../modules/services/CreateCategoryServices'
 
-const categoriesRouter = Router()
+const categoriesRoutes = Router()
 const categoriesRepository = new CategoriesRepositories()
 
-categoriesRouter.post('/', (request, response) => {
+categoriesRoutes.post('/', (request, response) => {
     const { name, description } = request.body
 
     const createCategoryServices = new CreateCategoryServices(categoriesRepository)
@@ -14,7 +14,7 @@ categoriesRouter.post('/', (request, response) => {
     return response.status(201).send()
 })
 
-categoriesRouter.get('/', (request, response) => {
+categoriesRoutes.get('/', (request, response) => {
     const listAllCategories = categoriesRepository.list()
 
     return response.json(listAllCategories)
@@ -22,4 +22,4 @@ categoriesRouter.get('/', (request, response) => {
 
 
 
-export { categoriesRouter }
+export { categoriesRoutes as categoriesRouter }
