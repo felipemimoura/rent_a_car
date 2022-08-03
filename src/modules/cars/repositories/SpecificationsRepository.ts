@@ -26,3 +26,5 @@ class SpecificationsRepository implements ICreateSpecificationsRepository {
         return specification
     }
 }
+
+export { SpecificationsRepository }
