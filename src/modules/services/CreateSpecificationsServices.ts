@@ -17,3 +17,5 @@ class CreateSpecificationsServices {
         this.specificationsRepository.create({ name, description })
     }
 }
+
+export { CreateSpecificationsServices }
