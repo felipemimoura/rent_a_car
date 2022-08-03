@@ -1,4 +1,4 @@
-import { ICreateSpecificationsRepository } from "../cars/repositories/ISpecificationsRepository";
+import { ICreateSpecificationsRepository } from "../repositories/ISpecificationsRepository";
 
 interface IRequest {
     name: string;
