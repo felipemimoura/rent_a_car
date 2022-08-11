@@ -31,6 +31,7 @@ export class CreateSpecification1660090759356 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable("categories")
     }
 
 }
