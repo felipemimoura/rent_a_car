@@ -9,7 +9,7 @@ class SpecificationsRepository implements ICreateSpecificationsRepository {
     }
 
 
-    create({ name, description }: ICreateSpecificationDTO): void {
+    async create({ name, description }: ICreateSpecificationDTO): Promise<void> {
         const specification = new Specification()
 
         Object.assign(specification, {
