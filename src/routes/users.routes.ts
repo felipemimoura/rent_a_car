@@ -3,10 +3,10 @@ import { CreateUserController } from '../modules/accounts/useCases/CreateUserCon
 
 
 const usersRoutes = Router()
-const createUserController = new CreateUserController()
 
+const createUserController = new CreateUserController()
 
 usersRoutes.post('/', createUserController.handle)
 
-export { usersRoutes }
+export { usersRoutes as usersRouter }
 
