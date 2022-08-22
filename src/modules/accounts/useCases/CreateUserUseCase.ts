@@ -1,6 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { IUsersRepository } from "../repositories/IUsersRepository";
+import { hash } from 'bcryptjs'
 @injectable()
 class CreateUserUseCase {
 
@@ -9,8 +10,10 @@ class CreateUserUseCase {
         private usersRepository: IUsersRepository) { }
 
     async execute({ driver_license, email, name, password }: ICreateUserDTO): Promise<void> {
+
+        const passwordHash = await hash(password, 8)
         await this.usersRepository.create({
-            name, email, driver_license, password
+            name, email, driver_license, password: passwordHash
         })
     }
 }
