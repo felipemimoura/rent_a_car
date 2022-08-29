@@ -7,6 +7,7 @@ class CreateSpecificationsController {
 
     async handle(request: Request, response: Response): Promise<Response> {
         const { name, description } = request.body
+        console.log(name)
 
         const createSpecificationUseCase = container.resolve(CreateSpecificationUseCase)
 
